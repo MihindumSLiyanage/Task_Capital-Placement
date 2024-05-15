@@ -17,8 +17,6 @@ namespace Task.Models
         public string LastName { get; set; }
 
         [JsonProperty("email")]
-        [EmailAddress]
-        [RegularExpression(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$", ErrorMessage = "Invalid EmailAddress")]
         public string Email { get; set; }
 
         [JsonProperty("idNumber")]
