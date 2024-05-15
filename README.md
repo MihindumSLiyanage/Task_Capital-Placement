@@ -21,11 +21,6 @@ This is a .NET 8 web application that allows employers to create a program and a
 - Questions → This represents a question within an application form. The `/api/questions` endpoints handle CRUD operations for questions.
 - Answer →  This represents a candidate's answer to a specific question within a submitted application using `/api/answer` API. 
 
-## Possible Relationships
-- An Employee can create many Questions. (One-to-Many)
-- A Question belongs to one Employee. (One-to-Many)
-- A Question can have many Answers from different candidates. (One-to-Many)
-
 ## API Reference
 
 | Endpoint | HTTP Method     | Result                |
