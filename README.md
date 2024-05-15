@@ -16,6 +16,16 @@ This is a .NET 8 web application that allows employers to create a program and a
 - Run the application and test the CRUD APIs using Swagger (or tools like Postman).
 - Refer to the API documentation for endpoint details.
 
+## Object Reference
+- Employee →  This likely represents an employer who creates programs and manages application forms. The `/api/employee` endpoints handle CRUD operations for employees.
+- Questions → This represents a question within an application form. The `/api/questions` endpoints handle CRUD operations for questions.
+- Answer →  This represents a candidate's answer to a specific question within a submitted application using `/api/answer` API. 
+
+## Possible Relationships
+- An Employee can create many Questions. (One-to-Many)
+- A Question belongs to one Employee. (One-to-Many)
+- A Question can have many Answers from different candidates. (One-to-Many)
+
 ## API Reference
 
 | Endpoint | HTTP Method     | Result                |
