@@ -15,12 +15,14 @@ namespace Task.Repository
             _container = cosmosClient.GetContainer("EmployeeDB", "Question");
         }
 
+        // Create a question
         public async Task<Question> CreateQuestion(Question question)
         {
             var response = await _container.CreateItemAsync(question);
             return response.Resource;
         }
 
+        // Get a question by Id
         public async Task<Question> GetQuestionById(string id)
         {
             var query = _container.GetItemLinqQueryable<Question>()
@@ -32,6 +34,7 @@ namespace Task.Repository
             return response.FirstOrDefault();
         }
 
+        // Get a question by Employee
         public async Task<IEnumerable<Question>> GetQuestionsByEmployeeId(string id)
         {
             var query = _container.GetItemLinqQueryable<Question>()
@@ -42,6 +45,7 @@ namespace Task.Repository
             return response;
         }
 
+        // Updates a question
         public async Task<Question> UpdateQuestion(string id, Question question)
         {
             var response = await _container.ReplaceItemAsync(question, question.Id);

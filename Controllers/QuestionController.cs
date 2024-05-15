@@ -15,6 +15,7 @@ namespace Task.Controllers
             _questionRepository = questionRepository;
         }
 
+        // GET api/Question/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetQuestionById(string id)
         {
@@ -27,6 +28,7 @@ namespace Task.Controllers
             return Ok(question);
         }
 
+        // GET api/Question/employee/{id}
         [HttpGet("employee/{id}")]
         public async Task<IActionResult> GetQuestionsByEmployeeId(string id)
         {
@@ -34,6 +36,7 @@ namespace Task.Controllers
             return Ok(questions);
         }
 
+        // POST api/Question/{id}
         [HttpPost]
         public async Task<IActionResult> CreateQuestion(Question question)
         {
@@ -41,6 +44,7 @@ namespace Task.Controllers
             return CreatedAtAction(nameof(GetQuestionById), new { id = createdQuestion.Id }, createdQuestion);
         }
 
+        // PUT api/Question/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateQuestion(string id, Question question)
         {
